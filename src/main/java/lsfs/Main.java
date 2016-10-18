@@ -69,7 +69,7 @@ public class Main {
 			UUID uuid = UUID.randomUUID();
 			out.printLine("if(localStorage.getItem('lsfs.id') !== '" + uuid.toString() + "') {");
 			out.startIndent();
-			out.printLine("java.io.File.fs.clear();");
+			out.printLine("java.io.LocalStorageFileSystem.fs.clear();");
 			out.printLine("localStorage.setItem('lsfs.id', '" + uuid.toString() + "');");
 			File f = new File(options.in);
 			if (f.exists()) {
@@ -184,9 +184,9 @@ public class Main {
 				out.printLine("f.createNewFile();");
 				byte[] content = new byte[fis.available()];
 				fis.read(content);
-				out.printLine("e = java.io.File.fs.getEntry(f.getAbsolutePath());");
+				out.printLine("e = java.io.LocalStorageFileSystem.fs.getEntry(f.getAbsolutePath());");
 				out.printLine("e.data = '" + Base64.getEncoder().encodeToString(content) + "';");
-				out.printLine("java.io.File.fs.putEntry(f.getAbsolutePath(), e);");
+				out.printLine("java.io.LocalStorageFileSystem.fs.putEntry(f.getAbsolutePath(), e);");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
