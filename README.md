@@ -15,7 +15,7 @@ First, you need to create a ``lsfs.json`` configuration file, that tells lsfs-sy
 Then you run lsfs-sync with Maven, providing the directory where the ``lsfs.json`` configuration file is located.
 
 ```bash
-mvn exec:exec -Din=DIRECTORY
+mvn exec:exec -Ddir=DIRECTORY
 ```
 
 

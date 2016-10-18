@@ -155,10 +155,12 @@ public class Main {
 			}
 		}
 		if (f.isDirectory()) {
-			if (options.includeDirPattern != null && !options.includeDirPattern.matcher(path).matches()) {
+			if (path != "" && options.includeDirPattern != null && !options.includeDirPattern.matcher(path).matches()) {
+				System.out.println("excluding dir (include filter): " + path);
 				return;
 			}
 			if (options.excludeDirPattern != null && options.excludeDirPattern.matcher(path).matches()) {
+				System.out.println("including dir (exclude filter): " + path);
 				return;
 			}
 		}

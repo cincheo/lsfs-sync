@@ -31,8 +31,8 @@ public class Options {
 
 	@Override
 	public String toString() {
-		return "{ in=" + in + ", out=" + out + ", root=" + root + ", includeFilter=" + includeFilter
-				+ ", excludeFilter=" + excludeFilter + " }";
+		return "{ in=" + in + ", includeFilter=" + includeFilter + ", includeDirFilter=" + includeDirFilter
+				+ ", excludeFilter=" + excludeFilter + ", excludeDirFilter=" + excludeDirFilter + " }";
 	}
 
 }
